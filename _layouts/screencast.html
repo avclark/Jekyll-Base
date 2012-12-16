@@ -1,0 +1,21 @@
+{% include head.html %}
+
+<body class="screencast">
+
+  {% include header.html %}
+
+  <div class="wrap">
+    <div class="post {% if page.custom_type %}{{ page.custom_type }}{% endif %}">
+      
+      <p class="date">{{ page.date | date: "%B %e, %Y" }} <a href="http://www.instapaper.com/hello2?url=http:www.thegentlymad.com{{ page.url }}&title={{ page.title }}">Send to Instapaper</a></p>
+      <h2>{{ page.title }}</h2>
+      
+      <iframe src="http://player.vimeo.com/video/{{ page.vimeo }}" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <p>{{ content }}</p>
+
+      {% include disqus.html %}
+    </div><!-- .post -->
+  </div><!-- .wrap -->
+
+{% include footer.html %}
